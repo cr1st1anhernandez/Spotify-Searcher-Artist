@@ -1,6 +1,7 @@
 'use client'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { FaMoon } from 'react-icons/fa'
+import { FaMoon, FaSpotify } from 'react-icons/fa'
 import { MdLightMode } from 'react-icons/md'
 
 export default function ToggleTheme(): JSX.Element {
@@ -21,7 +22,10 @@ export default function ToggleTheme(): JSX.Element {
   }, [darkMode])
 
   return (
-    <header className="absolute right-6 top-6 flex w-fit items-center gap-2">
+    <header className="absolute left-0 top-6 flex w-full items-center justify-between gap-2 px-8">
+      <Link href="/">
+        <FaSpotify className="h-auto w-8 text-black dark:text-zinc-100 md:w-10" />
+      </Link>
       <button
         className="relative flex h-8 w-16 cursor-pointer items-center rounded-full bg-green-600 p-1 dark:bg-zinc-100"
         onClick={() => {
