@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { FaHeadphones, FaHeart } from 'react-icons/fa'
 export default function ArtistPage(): JSX.Element {
-  const [artist, setArtist] = useState({
+  const [artist] = useState({
     name: 'Billie Eilish',
     albums: [
       {

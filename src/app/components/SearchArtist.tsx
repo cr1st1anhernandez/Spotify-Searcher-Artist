@@ -48,7 +48,7 @@ function useSearch(): Search {
 export default function SearchArtist(): JSX.Element {
   const { search, updateSearch, error } = useSearch()
   const [accessToken, setAccessToken] = useState('')
-  const { artist, getArtist, loading } = useArtist({ search, accessToken })
+  const { getArtist } = useArtist({ search, accessToken })
 
   const CLIENT_ID = process.env.NEXT_PUBLIC_CLIENT_ID
   const CLIENT_SECRET = process.env.NEXT_PUBLIC_CLIENT_SECRET
