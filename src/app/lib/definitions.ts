@@ -5,6 +5,9 @@ interface Image {
 interface Album {
   name: string
   images: Image[]
+  external_urls: {
+    spotify: string
+  }
 }
 
 export interface Search {

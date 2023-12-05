@@ -16,6 +16,9 @@ export function useArtist({ search, accessToken }: Search): ArtistState {
             url: 'https://i.scdn.co/image/ab67616d0000b2732a038d3bf875d23e4aeaa84e',
           },
         ],
+        external_urls: {
+          spotify: 'https://open.spotify.com/album/0JGOiO34nwfUdDrD612dOp',
+        },
       },
       {
         name: 'WHEN WE ALL FALL ASLEEP, WHERE DO WE GO?',
@@ -24,6 +27,9 @@ export function useArtist({ search, accessToken }: Search): ArtistState {
             url: 'https://i.scdn.co/image/ab67616d0000b27350a3147b4edd7701a876c6ce',
           },
         ],
+        external_urls: {
+          spotify: 'https://open.spotify.com/album/0JGOiO34nwfUdDrD612dOp',
+        },
       },
     ],
     genres: ['art pop', 'electropop', 'pop'],
@@ -35,26 +41,23 @@ export function useArtist({ search, accessToken }: Search): ArtistState {
       'https://open.spotify.com/intl-es/artist/6qqNVTkY8uBg9cP3Jd7DAH',
   })
 
-  const getArtist = useCallback(
-    async ({ search, accessToken }: Search) => {
-      if (search === previousSearch.current) return
-      try {
-        setLoading(true)
-        setError(null)
-        const newArtist = await searchArtist({ search, accessToken })
-        setArtist(newArtist)
-      } catch (e) {
-        if (e instanceof Error) {
-          setError(e.message)
-        } else {
-          setError('An error has ocurred')
-        }
-      } finally {
-        setLoading(false)
+  const getArtist = useCallback(async ({ search, accessToken }: Search) => {
+    if (search === previousSearch.current) return
+    try {
+      setLoading(true)
+      setError(null)
+      const newArtist = await searchArtist({ search, accessToken })
+      setArtist(newArtist)
+    } catch (e) {
+      if (e instanceof Error) {
+        setError(e.message)
+      } else {
+        setError('An error has ocurred')
       }
-    },
-    [search],
-  )
+    } finally {
+      setLoading(false)
+    }
+  }, [])
 
   return { artist, getArtist, error, loading }
 }

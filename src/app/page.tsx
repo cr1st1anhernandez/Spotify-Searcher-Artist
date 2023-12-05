@@ -1,5 +1,4 @@
 'use client'
-import SearchArtist from '@/app/components/SearchArtist'
 import ThemeToggle from '@/app/components/ThemeToggle'
 import Link from 'next/link'
 import { FaGithubAlt, FaSpotify } from 'react-icons/fa'
@@ -22,7 +21,12 @@ export default function Home(): JSX.Element {
         </p>
         <div>
           <div className="flex flex-col gap-2 lg:w-full lg:flex-row">
-            <SearchArtist />
+            <Link
+              href="/artist"
+              className="flex w-full items-center justify-center rounded-md bg-green-600 px-8 py-2 font-bold lg:w-1/2"
+            >
+              Probar
+            </Link>
             <div className="flex w-full gap-2 lg:w-fit">
               <Link
                 href="https://github.com/cr1st1anhernandez/spotify-searcher-artist"

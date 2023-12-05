@@ -28,7 +28,6 @@ export const searchArtist = async ({
         '?include_groups=album&limit=3',
       searchParameters,
     )
-    console.log(dataArtist)
     const dataAlbums = await responseAlbums.json()
     return {
       name: dataArtist.artists.items[0].name,
