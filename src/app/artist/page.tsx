@@ -1,11 +1,11 @@
 'use client'
 import ThemeToggle from '@/app/components/ThemeToggle'
-import Image from 'next/image'
-import { FaHeadphones, FaHeart } from 'react-icons/fa'
-
 import { useArtist } from '@/app/hooks/useArtist'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
+import { FaHeadphones, FaHeart } from 'react-icons/fa'
+import { Toaster } from 'sonner'
 
 interface Search {
   search: string
@@ -96,6 +96,7 @@ export default function ArtistPage(): JSX.Element {
 
   return (
     <section className="flex w-full max-w-7xl flex-col gap-4 text-zinc-100">
+      <Toaster theme="system" closeButton={true} />
       <ThemeToggle />
       <form
         onSubmit={handleSubmit}
@@ -109,7 +110,7 @@ export default function ArtistPage(): JSX.Element {
             name="query"
             value={search}
             onChange={handleChange}
-            className="h-10 w-full rounded-md border-2 border-zinc-400 bg-zinc-200 px-4 outline-none focus:border-zinc-700 dark:border-zinc-500 dark:bg-zinc-700 dark:focus:border-zinc-100"
+            className="h-10 w-full rounded-md border-2 border-zinc-400 bg-zinc-200 px-4 text-black outline-none focus:border-zinc-700 dark:border-zinc-500 dark:bg-zinc-700 dark:text-zinc-100 dark:focus:border-zinc-100"
           />
           <p className="font-semibold text-rose-600 lg:hidden">{error}</p>
           <button

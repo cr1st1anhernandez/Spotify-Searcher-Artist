@@ -15,11 +15,20 @@ export const searchArtist = async ({
       },
     }
 
-    const responseArtist = await fetch(
+    const responseArtist = fetch(
       'https://api.spotify.com/v1/search?q=' + search + '&type=artist',
       searchParameters,
     )
-    const dataArtist = await responseArtist.json()
+
+    toast.promise(responseArtist, {
+      loading: 'Loading...',
+      success: (data) => {
+        return 'Artista Encontrado'
+      },
+      error: 'Error',
+    })
+
+    const dataArtist = await (await responseArtist).json()
     const artistID = dataArtist.artists.items[0].id
     const responseAlbums = await fetch(
       'https://api.spotify.com/v1/artists/' +
