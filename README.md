@@ -1,6 +1,6 @@
-# 🎤 Spotify Searcher 🎶
+# Spotify Searcher
 
-![Captura de pantalla de la página de inicio](homepage.png)
+![Homepage](/homepage.png)
 
 Este es un buscador de artistas creado con React y Tailwind CSS. Permite buscar artistas y obtener información sobre ellos.
 
@@ -12,7 +12,7 @@ Este es un buscador de artistas creado con React y Tailwind CSS. Permite buscar 
 
 ## 📸 Capturas de pantalla
 
-![Captura de pantalla de Billie Eilish](billie-eilish.png)
+![Billie eilish](/billie-eilish.png)
 
 ## 🛠️ Tecnologías Utilizadas
 
